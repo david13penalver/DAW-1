@@ -1,13 +1,13 @@
-# Seguridad en las redes informáticas
+# 1. Seguridad en las redes informáticas
 - Preservar integridad (que no se pierda información)
 - Preservar la disponibilidad
 - Preservar la privacidad
 - Medidas activas: detectar amenazas y generar una acción
 - Medidas pasivas: reducir el impacte del ataque (ej.: back-up)
-## Control de acceso
+## 1.1. Control de acceso
 - Se puede limitar el acceso a ciertos usuarios a ciertos equipos de una red, de equipos a la red, ejecución de ciertos comandos, etc.
 - Medidas de control de acceso físico, doble firewall...
-## Cortafuegos
+## 1.2. Cortafuegos
 - Hardware o software
 - Protege la red de accesos no autorizados
 - Impide accesos no autorizados y permite accesos autorizados
@@ -34,7 +34,7 @@
       - `netsh advfirewal`: configura el firewall desde comandos
       - `netsh advfirewall show allprofiles`: muestra todas las reglas
       - `Get-NetFirewallProfile`: muestra el estado de los perfiles del firewall
-## Sistemas de detección de intrusión
+## 1.3. Sistemas de detección de intrusión
 - Herramientas que motirozian y detectan intrusiones:
   - IDS (Intrusion Detection System): detecta accesos no autoriados a equipos o redes
   - IPS (Intrusion Prevention System): detecta y bloquea accesos no autorizados
@@ -71,7 +71,7 @@
 - Herramienta con la que se puede conseguir un certificado difital de forma gratuita
 - Es una CA
 - Válido para usarlo en la web con el protocolo HTTPS
-## Configuración del router
+## 1.4. Configuración del router
 - Necesario conocer IP, usuario y contraseña
 - En LAN pequeñas: 192.168.1.1 o 192.168.0.1
 - Medidas de seguridad:
@@ -84,8 +84,8 @@
   - Actualizar el firmware
   - Abrir solo los puertos necesarios
 - `traceroute`: muestra la ruta que sigue un paquete de datos, routers por los que pasa y si hay un fallo (`tracert` en Windows)
-# Recursos compartidos
-## Identificación de los equipos dentro de una red
+# 2. Recursos compartidos
+## 2.1. Identificación de los equipos dentro de una red
 - Cada equipo tiene una dirección IP y nombre únicos
 - Nombres: 15 caracteres máximo (no espacio ni caracteres especiales)
 - Se añaden a un grupo de trabajo o a un dominio
@@ -99,14 +99,14 @@
   - Hay una BBDD de los servicios de dominio y un servidor como Active Directory en Windows o LDAP en Linux
   - Los usuarios pueden iniciar sesión en cualquier equipo configurado para ello
   - Los equipos pueden tener un nombre de host o un nombre de dominio completo o FQDN (Fully Qualified Domain Name)
-## Conexión de ordenadores en red
+## 2.2. Conexión de ordenadores en red
 - `ping`: comprueba la conexión entre dos equipos
   - En Linux se corta con Ctrl+C
   - En Windows son 4 por defecto
   - Desde PowerShell:
     - `Test-Connection -ComputerName <nombre> -TraceRoute`
     - `Test-Connection -ComputerName <nombre> -Port <puerto>`
-## Compartición de recursos en red
+## 2.3. Compartición de recursos en red
 ### Windows
 - Para ver los recursos disponibles en la red se selecciona Red dentro del explorador de archivos
 - Para comprobar el estado de la detección de redes y recursos compartidos: Panel de control > Centro de redes y recursos compartidos > Cambiar configuración de uso compartido avanzado
@@ -127,7 +127,7 @@
 - El acceso de invitado debe dejarse desactivado por seguridad
 #### Servicios de Samba en Linux
 - Se pueden crear usuarios de Samba y acceder desde otro equipo Linux
-# Listas de control de acceso
+# 3. Listas de control de acceso
 - Sirven para ampliar el control sobre los permisos asignados y el acceso de los usuarios a diferentes recursos
 - Tanto locales como a través de la red
 - Pueden ser:
@@ -142,8 +142,8 @@
 - Se gestiona en Seguridad de la `Carpeta > Avanzado`
 - `icacls`: crea, muestra o modifica la lista de control de acceso DACL de un fichero o carpeta
   - También puede realizar copias de las mismas y restaurarlas
-# Acceso remoto
-## Escritorio remoto
+# 4. Acceso remoto
+## 4.1. Escritorio remoto
 - Permite controlar un equipo de forma remota de modo gráfico
 - Windows: RDP (Remote Desktop Protocol) (XRDP en Linux)
 - Linux: VNC (Virtual Network Computing)
@@ -156,7 +156,7 @@
 - Se puede instalar también en Windows
 - Opciones: RealVNC, TightVNC, UltraVNC y TigerVNC
 - Todo programa de escritorio remoto tiene una parte de servidor (VNC Server) y una parte de cliente (VNC Viewer)
-## Conexión remota
+## 4.2. Conexión remota
 - Conexiones de solo texto
 - Más recomendable ya que es más rápido
 - También porque puede que el servivor al que se quiere acceder no tenga un entorno gráfico
@@ -184,7 +184,7 @@
 - Si se va a acceder más veces se puede asignar un valor a la sesión y guardarla
 - Accept: añade la clave a la lista de claves conocidas
 - Connect Once: no guarda la clave, para cuanndo no hay confianza
-## Copias remotas
+## 4.3. Copias remotas
 - Se utilizan para realizar copias de archivos en equipos remotos o copiar archivos desde un equipo remoto
 - Utilidades:
   - `rsync`: realiza copias rápidas en carpetas remotas y locales
