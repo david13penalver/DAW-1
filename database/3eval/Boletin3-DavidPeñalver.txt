@@ -1,0 +1,133 @@
+David Peñalver
+-- Ejercicio 1
+DECLARE
+    CURSOR c_empleados_dpto IS
+        SELECT e.nombre, e.salario, d.nombre
+        FROM empleados e
+        INNER JOIN departamentos d
+        ON e.departamento_id = d.id;
+
+	v_nombre_empleado e.nombre%TYPE;
+	v_salario e.salario%TYPE;
+	v_dpto d.nombre%TYPE;
+BEGIN
+    FOR cRowEmp IN c_empleados_dpto LOOP 
+        DBMS_OUTPUT.PUT_LINE('ID: ' || cRowEmp.id || ' Nombre: ' || cRowEmp.nombre);
+    END LOOP;
+
+	---------------------------
+
+    OPEN c_empleados_departamentos;
+    LOOP
+	fetch c_empleados_departamentos into v_nombre_empleado, v_salario, v_dpto;
+	EXIT WHEN c_empleados_departamentos%NOTFOUND;
+	dbms_output.put_line(.....);
+    END LOOP;
+    CLOSE c_empleados_departamentos;
+	
+END;
+/
+
+-- Ejercicio 2. Falta lo de la función en el FOOR.
+DECLARE 
+    CURSOR c_empleados_dpto_esp IS
+        SELECT e.ID, e.nombre, e.salario FROM empleados e inner JOIN departamentos d ON e.departamento_id = d.id WHERE d.nombre = '';
+BEGIN
+
+------
+    FOR cRowEmp IN c_empleados_dpto_esp LOOP 
+        DBMS_OUTPUT.PUT_LINE('ID: ' || cRowEmp.id || ' Nombre: ' || cRowEmp.nombre || ' Salario: ' || cRowEmp.salario);
+    END LOOP; 
+END;
+/
+
+------
+
+OPEN c_empleados_departamentos('ventas');
+    LOOP
+	fetch c_empleados_departamentos into v_nombre_empleado, v_salario, v_dpto;
+	EXIT WHEN c_empleados_departamentos%NOTFOUND;
+	dbms_output.put_line(.....);
+    END LOOP;
+    CLOSE c_empleados_departamentos;
+
+
+-- Ejercicio 3
+DECLARE
+    CURSOR c_empleados_4000 IS
+        SELECT e.nombre, e.salario
+        FROM empleados e
+        -- WHERE e.salario > 4000;
+
+	v_nombre e.nombre%TYPE;
+	v_salario e.salario%TYPE;
+BEGIN
+    FOR cRowEmp in c_empleados_4000 LOOP
+        DBMS_OUTPUT.PUT_LINE('Nombre: ' || cRowEmp.nombre || ' Salario: ' || cRowEmp.salario);
+	END LOOP;
+
+    LOOP
+	FETCH c_empleados_4000
+	EXIT WHEN c_empleados_departamentos%NOTFOUND OR v_salario >= 4000;
+	DBMS_OUTPUT.PUT_LINE(.....);
+    END LOOP
+    CLOSE c_empleados_4000;
+END;
+/
+
+-- Ejercicio 4
+DECLARE
+    CURSOR c_empleados_excepcion IS
+        SELECT e.nombre, e.salario
+        FROM empleados e;
+    emp_no_datos exception;
+BEGIN
+    FOR cRowEmp in c_empleados_excepcion LOOP
+        DBMS_OUTPUT.PUT_LINE('Nombre: ' || cRowEmp.nombre || ' Salario: ' || cRowEmp.salario);
+    END LOOP;
+EXCEPTION
+    WHEN no_data_found THEN
+        DBMS_OUTPUT.PUT_LINE('No hay datos');
+END;
+/
+
+-- Ejercicio 5
+DECLARE
+    CURSOR c_empleado_total IS
+        SELECT COUNT(e.id)
+        FROM empleados e;
+BEGIN
+    FOR cRowEmp in c_empleado_total LOOP
+        DBMS_OUTPUT.PUT_LINE('Total de empleados: ' || cRowEmp);
+    END LOOP;
+END;
+/
+
+-- Ejercicio 6. Falta lo de la función.
+DECLARE
+    CURSOR c_empleados_salario_actualizado IS
+        SELECT e.nombre, e.salario
+        FROM empleados e INNER JOIN departamentos d ON e.departamento_id = d.id WHERE d.id = '';
+    salario_total number := 1.10;
+BEGIN
+    FOR cRowEmp in c_empleados_salario_actualizado LOOP
+        salario_total := salario_total * cRowEmp.incremento_salario;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE('Empleado' || cRowEmp.nombre || ' Salario actualizado: ' || cRowEmp.salario * salario_total);
+END;
+/
+
+
+DECLARE
+	CURSOR c_ejercicio6 IS
+		SELECT e.id, e.salario
+		FROM empleados e
+		WHERE e.departamento_id = 2;
+
+BEGIN
+	FOR cRowEmp in c_ejercicio6 LOOP
+		UPDATE empleados SET e.salario=salario*1.10;
+	END LOOP;
+
+END;
+/

@@ -1,0 +1,25 @@
+SCRIPTS EJERCICIOS BOLETÍN 4
+
+-- Ejercicio1
+select c.dorsal, c.nombre, count(*) as "Etapas ganadas" from ciclista c natural JOIN etapa e GROUP BY c.dorsal; 
+
+-- Ejercicio2. No lo tengo, es subconsulta?
+select distinct c.nombre, c.edad from etapa e natural join ciclista c natural join llevar l 
+GROUP BY c.nombre, c.edad, e.netapa having count(l.codigo) > 1;
+
+-- Ejercicio3
+select e.nomeq from equipo e NATURAL JOIN ciclista c GROUP BY e.nomeq HAVING COUNT(c.dorsal) > 5; 
+select nomeq from ciclista GROUP BY nomeq HAVING COUNT(dorsal) > 5;
+
+-- Ejercicio4
+select c.nombre, count(*) as "Puertos ganados" from ciclista c NATURAL JOIN puerto GROUP BY c.dorsal HAVING count(c.dorsal) > 1; 
+
+-- Ejercicio5. Solo salen los puertos de más de 700, no las que todos los de la etapa.
+select DISTINCT p.netapa from puerto p where (p.altura > 700); 
+-- Ejercicio5 (falla la etapa 10)
+select DISTINCT p.netapa from puerto p where (p.altura > 700) and not exists (
+    select * from etapa e natural join puerto pp where pp.altura <= 700
+);
+-- Ejercicio5
+select netapa from puerto group by netapa having min(altura) > 700;
+

@@ -1,0 +1,31 @@
+-- CONSULTAS
+
+-- Muéstrame la cantidad de clientes de la provincia de Valencia agrupados por municipio
+
+select cliente11.poblacion, COUNT(cliente11.poblacion) from cliente11 JOIN cliente12 ON cliente11.poblacion = cliente12.poblacion where cliente12.provincia = "Valencia" group by cliente11.poblacion HAVING COUNT(cliente11.poblacion) > 1;
+
+select cliente11.poblacion, COUNT(cliente11.poblacion) from cliente11 JOIN cliente12 ON cliente11.poblacion = cliente12.poblacion where cliente12.provincia = "Valencia" group by cliente11.poblacion HAVING COUNT(cliente11.poblacion) > 1;
+
+-- Muéstrame qué reparaciones tiene que hacer cada técnico
+
+select CONCAT_WS(" ", empleado12.nombre, empleado12.apellido1), reparacion.descripcion_reparacion from tecnico, empleado111, empleado12, reparacion where empleado111.dni = empleado12.dni and empleado111.id_empleado = tecnico.id_empleado and reparacion.id_empleado = tecnico.id_empleado;
+
+SELECT CONCAT_WS(" ", empleado12.nombre, empleado12.apellido1), reparacion.descripcion_reparacion FROM empleado12 NATURAL JOIN empleado111 NATURAL JOIN tecnico NATURAL JOIN reparacion;
+
+-- Muéstrame las piezas usadas en cada tarea y de qué proveedor son
+
+select pieza1.nombre FROM pieza1, pieza2, utiliza, compradas WHERE pieza1.nombre = pieza2.nombre and pieza2.id_pieza = utiliza.id_pieza and pieza2.id_pieza = compradas.id_pieza;
+
+SELECT pieza1.nombre FROM pieza1 NATURAL JOIN pieza2 NATURAL JOIN utiliza NATURAL JOIN compradas;
+
+-- Muéstrame el nombre de las piezas usadas en las tareas ordenado por el precio de la pieza y, si tienen el mismo precio, por el nombre
+
+select p2.nombre, p2.precio from pieza2 p2, tarea t, utiliza u where p2.id_pieza = u.id_pieza and u.id_tarea = t.id_tarea order by p2.precio, p2.nombre;
+
+SELECT p2.nombre, p2.precio FROM pieza2 p2 NATURAL JOIN utiliza u NATURAL JOIN tarea t ORDER BY p2.precio, p2.nombre;
+
+-- Muéstrame los productos que sean una CPU o una GPU
+
+select producto.nombre from producto WHERE nombre like "%CPU%" or nombre like "%GPU%";
+
+SELECT producto.nombre FROM producto WHERE nombre like "%CPU%" or nombre like "%GPU%";

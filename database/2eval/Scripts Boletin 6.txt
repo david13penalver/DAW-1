@@ -1,0 +1,23 @@
+--SCRIPTS EJERCICIOS BOLETÍN 6
+
+
+-- EJERCICIO 1. Devuelve un listado con todos los pedidos que ha realizado Adela Salas Díaz.
+select p.* from pedido p join cliente c on p.id_cliente=c.id where c.nombre="Adela" and c.apellido1="Salas" and c.apellido2="Díaz";
+
+-- EJERCICIO 2. Devuelve el número de pedidos en los que ha participado el comercial Daniel Sáez Vega
+
+select p.id from pedido p join comercial c on p.id_comercial=c.id where c.nombre="Daniel" and c.apellido1="Sáez" and c.apellido2="Vega";
+
+-- EJERCICIO 3. Devuelve un listado de los clientes que no han realizado ningún pedido.
+select c.* from cliente c left join pedido p on c.id=p.id_cliente where p.id_cliente is null;
+
+-- EJERCICIO 4. Devuelve un listado con los datos de los clientes y los pedidos, de todos los clientes que han realizado un pedido durante el año 2017 con un valor mayor o igual al valor medio de los pedidos realizados durante ese mismo año.
+select * from cliente c left join pedido p on c.id=p.id_cliente where (p.fecha between "2017/01/01" and "2017/12/31") and (
+    select avg(total) from pedido where (fecha between "2017/01/01" and "2017/12/31")
+);
+
+-- EJERCICIO 5. Devuelve la fecha y la cantidad del pedido de menor valor realizado por el cliente Pepe Ruiz Santana.
+select p.fecha, p.total from pedido p join cliente c on p.id_cliente=c.id where c.nombre="Pepe" and c.apellido1="Ruiz" and c.apellido2="Santana" order by p.total asc limit 1;
+
+
+

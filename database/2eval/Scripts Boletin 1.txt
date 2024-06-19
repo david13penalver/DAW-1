@@ -1,0 +1,73 @@
+SCRIPTS EJERCICIOS BOLETÍN 1
+
+PREVIO
+
+use ciclismo2;
+show tables;
+desc ciclista;
+
+EJERCICIO 1
+
+select nombre, edad from ciclista where (edad > 20);
+
+EJERCICIO 2
+
+show tables;
+desc ciclista;
+select c.nombre, e.director from ciclista c, equipo e where (c.nomeq = "kelme") and (e.nomeq=c.nomeq);
+
+EJERCICIO 3
+
+desc etapa;
+desc puerto;
+select e.netapa, e.km, p.nompuerto from puerto p, etapa e where (p.netapa = e.netapa);
+
+SELECT p.nompuerto, e.netapa, e.km from puerto p NATURAL JOIN etapa e;
+
+EJERCICIO 4
+
+select c.nombre from ciclista c, equipo e where (c.edad > 24) and (c.edad < 31) and ((e.nomeq = "kelme") or (e.nomeq = "banesto")) and (c.nomeq = e.nomeq);
+
+select c.nombre from ciclista c where (c.edad > 24) and (c.edad < 31) and (c.nomeq = "kelme" or c.nomeq = "banesto");
+
+select c.nombre from ciclista c where (c.edad > 24) and (c.edad < 31) and (c.nomeq in ("kelme", "banesto"));
+
+EJERCICIO 5
+
+select e.nomeq, e.director from ciclista c, equipo e where (c.edad > 33) and (c.nomeq = e.nomeq);
+
+f
+
+EJERCICIO 6
+
+select c.nombre, c.nomeq from ciclista c, etapa et where (c.edad < 30) and (c.dorsal = et.dorsal);
+
+f
+
+EJERCICIO 7
+
+select distinct c.nombre, c.nomeq from ciclista c, puerto p where (c.edad > 32) and (c.dorsal = p.dorsal);
+
+f
+
+EJERCICIO 8 (resultado bien, pero filas repes)
+
+select et.netapa, c.nombre, c.nomeq from ciclista c, etapa et, maillot m, llevar l where (c.dorsal = et.dorsal) and (c.dorsal = l.dorsal) and (l.codigo = m.codigo) and (m.color = "amarillo") and (l.netapa = et.etapa);
+
+f
+
+EJERCICIO 9
+
+select et.salida, et.llegada from puerto p, etapa et where (p.netapa = et.netapa) and (p.altura > 1300);
+
+f
+
+EJERCICIO 10
+
+select avg(c.edad) from ciclista c, etapa et where (c.dorsal = et.dorsal);
+
+f
+
+EJERCICIO 11
+
+select avg(c.edad), min(c.edad), max(c.edad) from ciclista c;

@@ -1,0 +1,50 @@
+David Peñalver
+-- Ejercicio 1
+CREATE OR REPLACE procedure insertar_empleado(nombre varchar2, salario number, departamento number)
+IS
+BEGIN
+	INSERT INTO empleados(nombre, salario, departamento_id) VALUES(nombre, salario, departamento);
+EXCEPTION
+    WHEN others THEN
+    	dbms_output.put_line('Error al insertar empleado ' || SQLERRM);
+END;
+/
+
+-- Ejercicio 2
+CREATE OR REPLACE procedure update_empleado(id_empleado number, nuevo_salario number)
+IS
+BEGIN
+	UPDATE empleados SET salario=nuevo_salario where id_=id_empleado;
+	COMMIT;
+EXCEPTION
+	WHEN NO_DATA_FOUND THEN
+		dbms_output.put_line('Error al no encontrar el empleado con el id' || id_empleado);
+    WHEN others THEN
+    	dbms_output.put_line('Error al actualizar el salario del empleado ' || SQLERRM);
+END;
+/
+
+-- Ejercicio 3
+CREATE OR REPLACE procedure calcular_salario(id_departamento number)
+IS
+	v_salario_promedio NUMBER;
+BEGIN
+	SELECT AVG(salario) INTO v_salario_promedio FROM empleados WHERE departamento_id=id_departamento;
+	dbms_output.put_line('La media del salario es ' || v_salario_promedio);
+EXCEPTION
+    WHEN others THEN
+    	dbms_output.put_line('Error al actualizar el salario del empleado ' || SQLERRM);
+END;
+/
+
+-- Ejercicio 4
+CREATE OR REPLACE procedure delete_empleado(id_empleado number)
+IS
+BEGIN
+	DELETE FROM empleados WHERE id=id_empleado;
+EXCEPTION
+    WHEN others THEN
+    	dbms_output.put_line('Error al actualizar el salario del empleado ' || SQLERRM);
+END;
+/
+

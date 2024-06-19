@@ -1,0 +1,18 @@
+DAVID PEÑALVER NAVARRO - BLOQUE II
+
+-- En primer lugar, para realizar una transacción debemos desactivar el autocommit (estoy usando InnoDB, así que es posible hacerlo).
+SET autocommit=0;
+
+-- A continuación, iniciamos la transacción.
+START TRANSACTION;
+
+-- Realizamos una reserva del cliente 1 al vuelo 1
+INSERT INTO reservas(reserva_id, cliente_id, vuelo_id, fecha_reserva) VALUES (3, 1, 1, 2024-05-20);
+
+-- Reducimos el número de asientos disponibles en el vuelo (reducimos en 1 porque ha habido una reserva):
+UPDATE vuelos SET asientos_disponibles = asientos_disponibles - 1 WHERE vuelo_id = 1;
+-- Aquí sería más interesante un trigger con PL/SQL o en el Back-End para reducir el número de asientos disponibles 
+-- automáticamente, también para detectar si el número de asientos disponibles es 0 y, por tanto, no dejar realizar la reserva.
+
+-- Por último, realizamos el commit para que todos los cambios se realicen correctamente.
+COMMIT;

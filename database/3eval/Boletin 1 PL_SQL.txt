@@ -1,0 +1,77 @@
+-- EJERCICIO 1
+
+create or replace function sumar (num1 in number, num2 in number) return number
+is
+	total number;
+begin
+    total := num1 + num2;
+    return total;
+end;
+/
+
+declare
+	resultado number;
+begin
+    resultado := sumar(1,2);
+    dbms_output.put_line('El resultado es: ' || resultado);
+end;
+
+-- EJERCICIO 2
+
+create or replace function multiplicar (num1 in number, num2 in number) return number
+is
+	total number;
+begin
+    total := num1 * num2;
+    return total;
+end;
+/
+
+declare
+	resultado number;
+begin
+    resultado := multiplicar(1,2);
+    dbms_output.put_line('El resultado es: ' || resultado);
+end;
+
+-- EJERCICIO 3
+
+CREATE FUNCTION is_even(p_num IN NUMBER)
+	RETURN VARCHAR2
+IS
+BEGIN
+  IF MOD(p_num, 2) = 0 THEN
+    RETURN 'Par';
+  ELSE
+    RETURN 'Impar';
+  END IF;
+END;
+/
+
+------------------------------------------------------------------------
+
+CREATE FUNCTION is_even(p_num IN NUMBER)
+	RETURN VARCHAR2
+DECLARE
+    p_num NUMBER;
+BEGIN
+    p_num = 1;
+  IF MOD(p_num, 2) = 0 THEN
+    RETURN 'Par';
+  ELSE
+    RETURN 'Impar';
+  END IF;
+END;
+/
+
+
+-- EJERCICIO 4
+
+
+
+-- EJERCICIO 5
+
+
+
+-- EJERCICIO 6
+

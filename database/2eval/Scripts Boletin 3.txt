@@ -1,0 +1,54 @@
+SCRIPTS EJERCICIOS BOLETÍN 2
+
+EJERCICIO 1
+
+select * from articulos where (ciudad = "caceres");
+
+EJERCICIO 2
+
+select distinct IDP from envios where (idt = "t1");
+
+EJERCICIO 3
+
+select DISTINCT color, ciudad from componentes;
+
+EJERCICIO 4
+
+select idt, ciudad from articulos where (trim(ciudad) LIKE "%d" or ciudad like "%e%");
+
+EJERCICIO 5
+
+SELECT idp FROM envios where (idt = "t1") and (idc = "c1");
+
+EJERCICIO 6
+
+SELECT a.tnombre FROM articulos a, envios e where (a.idt = e.idt) and (idp = "p1") order by t.nombre asc;
+
+SELECT a.tnombre from articulos a NATURAL JOIN envios e WHERE (e.idp = "P1") order by t.nombre asc;
+
+EJERCICIO 7
+
+INSERT INTO proveedores VALUES ("P6", "DAVID", 100, "VALENCIA");
+INSERT INTO proveedores VALUES ("P7", "NAZAR", 101, "TENERIFE");
+SELECT * FROM proveedores;
+
+INSERT INTO componentes VALUES ("C7", "Z1A", "AMARILLO", 13, "VALENCIA");
+INSERT INTO componentes VALUES ("C7", "Z1A", "AMARILLO", 13, "VALENCIA");
+SELECT * FROM componentes;
+
+INSERT INTO articulos VALUES ("T8", "MOVIL", "VALENCIA");
+INSERT INTO articulos VALUES ("T9", "DILDO", "TENERIFE");
+SELECT * FROM articulos;
+
+
+
+EJERCICIO 8
+
+DELETE FROM componentes WHERE IDC = "C7";
+SELECT * FROM componentes;
+
+EJERCICIO 9
+
+UPDATE proveedores SET pnombre = "CIPFP MISLATA" WHERE pnombre = "NAZAR" O TAMBIÉN Y MEJOR: where idp = "P6";
+SELECT * FROM proveedores;
+

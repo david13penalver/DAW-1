@@ -1,0 +1,96 @@
+David Peñalver
+-- Ejercicio 1
+
+CREATE OR REPLACE TRIGGER trigger_insertion AFTER INSERT ON clientes
+    FOR EACH ROW
+	ENABLE
+BEGIN
+    INSERT INTO auditoria_clientes(1, 2, 'Inserción en cliente', now());
+END;
+
+-- Ejercicio 2
+
+CREATE TRIGGER trigger_actualizar_cantidad
+	AFTER INSERT OR UPDATE 
+    ON detalles_pedido
+    FOR EACH ROW
+	ENABLE
+DECLARE
+    
+BEGIN
+    UPDATE productos
+    SET cantidad_en_stock = cantidad_en_stock - :NEW.cantidad
+    WHERE codigo_producto = :new.codigo_producto;
+
+END;
+
+-- Ejercicio 3
+
+CREATE OR REPLACE TRIGGER trigger_actualizar_cantidad
+	AFTER INSERT OR UPDATE 
+    ON detalles_pedido
+    FOR EACH ROW
+	ENABLE
+DECLARE
+    v_total_pedido NUMBER;
+BEGIN
+    SELECT SUM(d.cantidad * precio_unidad)
+	    INTO v_total_pedido
+    FROM detalles_pedido d
+    WHERE d.codigo_pedido = :NEW.codigo_pedido;
+    
+    UPDATE pedidos
+    SET total = v_total_pedido
+    WHERE codigo_pedido = :NEW.codigo_pedido;
+END;
+
+-- Ejercicio 4
+
+CREATE OR REPLACE TRIGGER trigger_actualizar_estado AFTER INSERT OR UPDATE ON detalles_pedido FOR EACH ROW ENABLE
+
+DECLARE
+
+	v_total NUMBER;
+	v_total_entregado NUMBER
+
+BEGIN
+
+	SELECT count(*) INTO v_total
+	FROM detalles_pedido
+	WHERE codigo_pedido = :new.codigo_pedido;
+
+	SELECT count(*) INTO v_total_entregado
+	FROM detalles_pedido
+	WHERE codigo_pedido = :new.codigo_pedido and entregado = true;
+
+	IF v_total = v_total_entregado THEN
+		UPDATE pedidos
+		SET estado = 'entregado'
+		WHERE codigo_pedido = :new.codigo_pedido;
+	END IF
+
+END;
+
+-- Ejercicio 5
+
+CREATE OR REPLACE TRIGGER trigger_actualizar_estado AFTER INSERT OR UPDATE ON detalles_pedido FOR EACH ROW ENABLE
+
+DECLARE
+
+	cursor c_detalle_pedido IS
+	SELECT codigo, cantidad -- se puede asterisco --
+	FROM detalles_pedido
+	WHERE codigo_pedido = new.codigo_pedido;
+
+BEGIN
+
+	FOR r_detalle IN c_detalle_pedido LOOP
+		UPDATE productos
+		SET cantidad_en_stock = cantidad_en_stock - r_detalle.cantidad
+		WHERE productos.codigo_producto = r_detalle.codigo_producto;
+	END LOOP;
+
+EXCEPTION
+	WHEN NO_DATA_FOUND THEN dbms_output.put_line('No se han encontrado datos');
+
+END;

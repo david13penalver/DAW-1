@@ -1,0 +1,60 @@
+SCRIPTS EJERCICIOS BOLETÍN 2
+
+PREVIO
+
+use coches;
+show tables;
+desc cliente;
+
+EJERCICIO 1
+
+select * from cliente c where (c.ciudad = "madrid");
+
+EJERCICIO 2
+
+select m.nombre from marca m order by (m.nombre [asc]);
+
+EJERCICIO 3
+
+select c.cifc from concesionario c, distribucion d where (c.cifc = d.cifc) and (d.cantidad > 18);
+
+select d.cifc from distribucion d where and (d.cantidad > 18); -- El cif de coche ya está en distribución
+
+EJERCICIO 4
+
+select c.cifc from distribucion d where (d.cantidad between 10 and 18);
+
+EJERCICIO 5
+
+select c.cifc from concesionario c, distribucion d where (c.cifc = d.cifc) and (d.cantidad >= 10) and (d.cantidad <= 18);
+
+
+EJERCICIO 6 (es el mismo que el 5, pongo lo que había puesto en el anterior sin el between)
+
+select d.cifc from distribucion d where (d.cantidad < 5) or (d.cantidad > 10);
+
+EJERCICIO 7
+
+select m.cifm, cl.cifcl from marca m, cliente cl where (m.ciudad = cl.ciudad);
+
+select m.cifm, cl.cifcl from marca m INNER JOIN cliente cl ON (cl.cifcl = m.cifm) WHERE (cl.ciudad = m.ciudad);
+select m.cifm, cl.cifcl from marca m INNER JOIN coche ON (m.cifc = c.cifm) INNER JOIN venta v ON (c.codcoche = v.codcoche) INNER JOIN cliente cl ON (cl.cifcl = v.cifcl) WHERE (cl.ciudad = m.ciudad);
+
+EJERCICIO 8
+
+select m.cifm, cl.cifcl from marca m, cliente cl where (m.ciudad != cl.ciudad);
+
+select m.cifm, cl.cifcl from marca m, cliente cl where (m.ciudad <> cl.ciudad);
+
+
+EJERCICIO 9
+
+select d.codcoche from distribucion d, concesionario c where (c.ciudad = "Barcelona") and (d.cifc = c.cifc);
+
+select d.codcoche from distribucion d NATURAL JOIN concesionario WHERE (c.ciudad = "Barcelona");
+
+EJERCICIO 10
+
+select v.cifc from venta v, cliente cl where (cl.ciudad = "Madrid") and (v.cifcl = v.cifv);
+
+select v.codcoche from venta v NATURAL JOIN cliente cl WHERE (cl.ciudad = "Madrid");

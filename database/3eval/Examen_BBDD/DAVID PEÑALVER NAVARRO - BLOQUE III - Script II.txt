@@ -1,0 +1,25 @@
+DAVID PEÑALVER NAVARRO - BLOQUE III - Script II
+
+CREATE OR REPLACE TRIGGER trigger_actualizacion_asientos AFTER INSERT ON reservas FOR EACH ROW ENABLE
+DECLARE
+    identificador_reserva INT;
+	numeros_asientos INT;
+BEGIN
+    SELECT vuelo_id INTO identificador_reserva FROM reservas WHERE reserva_id = :NEW.reserva_id;
+
+    UPDATE vuelos SET asientos_disponibles = asientos_disponibles - 1 WHERE vuelo_id = identificador_reserva;
+
+	SELECT asientos_disponibles INTO numeros_asientos FROM vuelos WHERE vuelo_id = identificador_reserva;
+
+    IF (numeros_asientos = 0) THEN
+        UPDATE VUELOS SET estado = 'Agotado';
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Ha ocurrido un error inesperado');
+END;
+
+
+
+
+

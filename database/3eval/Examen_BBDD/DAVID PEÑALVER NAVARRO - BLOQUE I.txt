@@ -1,0 +1,9 @@
+DAVID PEÑALVER NAVARRO - BLOQUE I
+
+CREATE USER 'david_vuelos'@'localhost' IDENTIFIED BY 'vuelo123';
+GRANT SELECT, INSERT ON aeropuerto.vuelos to 'david_vuelos'@'localhost';
+CREATE ROLE 'gestor';
+GRANT SELECT, UPDATE ON aeropuerto.clientes to 'gestor';
+GRANT 'gestor' TO 'david_vuelos'@'localhost';
+REVOKE SELECT, INSERT ON aeropuerto.vuelos FROM 'david_vuelos'@'localhost';
+DROP USER 'david_vuelos'@'localhost';

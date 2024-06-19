@@ -1,0 +1,54 @@
+--SCRIPTS EJERCICIOS BOLETÍN 5
+
+
+-- Ejercicio1
+
+select nombre_cliente, limite_credito from cliente order by limite_credito desc limit 1;
+
+-- Ejercicio2
+
+select p.nombre from producto p order by p.cantidad_en_stock asc limit 1; 
+
+-- Ejercicio3
+
+select e.nombre, e.apellido1, e.apellido2, e.codigo_jefe from empleado e natural join empleado jefe where 
+jefe.codigo_jefe = (
+    select e2.codigo_empleado from empleado e2 where e2.nombre = "Alberto" and e2.apellido1 = "Soria"
+);
+
+-- Ejercicio4
+
+SELECT e.nombre, e.apellido1, e.puesto from empleado e LEFT JOIN cliente c ON e.codigo_empleado = c.codigo_empleado_rep_ventas WHERE c.codigo_empleado_rep_ventas IS NULL; 
+
+-- Ejercicio5
+
+select DISTINCT c.nombre_cliente from cliente c left join pago p on c.codigo_cliente=p.codigo_cliente where p.codigo_cliente is not null; 
+
+-- Ejercicio6. En proceso
+
+select DISTINCT o.* from oficina o natural join empleado e
+where e.codigo_empleado not in (
+    select e2.codigo_empleado from empleado e2 natural join cliente c2 natural join pedido pe2 natural join detalle_pedido dp2 natural join producto pr2
+    where pr2.gama = "%frutal%"
+);
+
+-- Ejercicio7. En proceso
+
+select c.* from cliente c natural join pedido p where c.codigo_cliente not in (
+    select c2.codigo_cliente from cliente c2 natural join pago p2
+);
+
+-- Ejercicio8
+
+select p.* from producto p natural join detalle_pedido d;
+
+-- Ejercicio9
+
+select c.nombre_cliente, count(p.codigo_pedido) as "Nº pedidos" from cliente c natural join pedido p GROUP BY c.codigo_cliente; 
+
+-- Ejercicio10
+
+select distinct c.nombre_cliente from cliente c, pedido p where p.fecha_pedido between "2008-01-01" and "2008-12-31" order by c.nombre_cliente;
+
+
+
