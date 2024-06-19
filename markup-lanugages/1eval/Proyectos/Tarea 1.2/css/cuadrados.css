@@ -1,0 +1,39 @@
+body {
+    position: relative;
+}
+
+#Principal {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: red;
+    width: 30%;
+    height: 20%;
+}
+
+#Novedades {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 70%;
+    height: 70%;
+}
+
+#Contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: purple;
+    width: 70%;
+    height: 80%;
+}
+
+#Ofertas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: green;
+    width: 30%;
+    height: 80%;
+}

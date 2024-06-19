@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+body {
+    background-color: skyblue;
+    position: relative;
+
+}
+
+
+#principal {
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+    width: 70vw;
+    height: 95vh;
+    background-color: rgb(255, 0, 0);
+}
+
+p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    font-size: 2em;
+    font-family: sans-serif;
+}
+
+#novedades {
+    position: absolute;
+    left: 0;
+    width: 49vw;
+    height: 28vh;
+    background-color: blue;
+}
+
+#contenido {
+    position: absolute;
+    left: 0;
+    top: 30vh;
+    width: 49vw;
+    height: 65vh;
+    background-color: purple;
+}
+
+#ofertas {
+    position: absolute;
+    right: 0;
+    width: 20vw;
+    height: 70vh;
+    background-color: darkgreen;
+    vertical-align: text-bottom;
+}

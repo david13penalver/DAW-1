@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(../img/background-city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    padding: 0 5vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 100vh;
+}
+
+header {
+    padding: 1.6em 0;
+    height: 10vh;
+    background-color: #bfbfbf;
+}
+
+main {
+    padding: 3vh 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0.6em 0;
+    height: 5vh;
+    width: 90vw;
+    background-color: #bfbfbf;
+    border-bottom: 2px black solid;
+    margin-bottom: 2vh;
+}
+
+footer > p {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Cambria', Times, serif;
+    letter-spacing: 0.45em;
+    word-spacing: 1em;
+    text-align: center;
+    //line-height: 10vh;
+    text-shadow: 2px 2px grey;
+    color: darkblue;
+    align-content: center;
+    //height: 10vh;
+}
+
+h1,
+h2,
+strong {
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    color: darkred;
+    letter-spacing: 0.6vw;
+    border-bottom: 3px darkred solid;
+}
+
+ul {
+    font-family: sans-serif;
+    font-size: 0.7em;
+    margin: 2vh 0;
+}
+
+.imagen_datos {
+    display: inline-block;
+    position: absolute;
+    width: 40vw;
+    padding-top: 3vh;
+}
+
+.imagen_datos > img {
+    height: 150px;
+}
+
+
+
+.texto_datos {
+    display: inline-block;
+    width: 40vw;
+    margin: 10vh 0;
+}
+
+.texto_datos ul {
+    list-style-type: circle;
+}
+
+.experiencia ul {
+    list-style-type: square;
+}
+
+.formacion ul {
+    list-style-image: url(../img/figma.svg);
+}
+
+.formacion {}
+
+.experiencia {}

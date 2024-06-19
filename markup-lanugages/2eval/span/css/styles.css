@@ -1,0 +1,35 @@
+span {
+    display: inline-block;
+    border: 1px solid red;
+    margin: 10px;
+    height: 50px;
+    width: 450px;
+}
+
+p {
+    border: 5px dotted blue;
+    margin: 5px;
+}
+
+h3 {
+    display: none;
+}
+
+.caja {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background: purple;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+    margin: 10px;
+    text-align: center;
+}
+
+#caja3 {
+    display: none;
+}
+
+#caja1 {
+    visibility: hidden;
+}

@@ -1,0 +1,20 @@
+<!ELEMENT pokemon (descripcion,movimientos,combate)>
+<!ELEMENT descripcion (pokedex, caracteristicas)>
+<!ELEMENT movimientos (#PCDATA)>
+<!ELEMENT combate (#PCDATA)>
+
+<!ELEMENT pokedex>
+<!ELEMENT caracteristicas (preevolucion, evolucion)>
+
+<!ELEMENT tipo>
+<!ATTLIST elemental>
+<!ATTLIST fortalezas>
+<!ATTLIST debilidades>
+
+<!ELEMENT habilidades EMPTY>
+<!ATTLIST habilidades hab1>
+<!ATTLIST habilidades hab2>
+
+
+
+

@@ -1,0 +1,10 @@
+<!ELEMENT pokemon(descripcion,tipo,habilidades)>
+	<!ELEMENT descripcion(pokedex, caracteristicas)>
+		<!ELEMENT pokedex (#PCDATA)>
+		<!ELEMENT caracteristicas (#PCDATA)>
+	<!ELEMENT tipo>
+	<!ATTLIST tipo elemental CDATA
+					fortalezas CDATA
+					debilidades CDATA>
+	<!ELEMENT habilidades EMPTY>
+	<!ATTLIST habilidades hab1 CDATA #REQUIRED hab2>

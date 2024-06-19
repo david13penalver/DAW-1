@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&family=Ubuntu&display=swap');
+
+* {
+    background-color: green;
+    margin: 0;
+    padding: 0;
+}
+
+#id {
+    border: 3px dashed yellow;
+}
+
+.clase {
+    color: red;
+}
+
+#id.clase {
+    padding: 10px;
+}
+
+p#id.clase {
+    font-size: 40px;
+}
+
+div p {
+    background-color: red;
+}
+
+div+p {
+    background-color: aliceblue;
+}
+
+div>p {
+    background-color: antiquewhite;
+}
+
+p~ul {
+    background-color: aquamarine;
+}
+
+p~span {
+    background-color: aquamarine;
+}
+
+.ejercicio5 {
+    font-family: 'Ubuntu', sans-serif;    
+    font-size: 3em;
+    font-style: italic;
+    font-weight: 900;
+    color: yellow;
+    font-variant: normal;
+}

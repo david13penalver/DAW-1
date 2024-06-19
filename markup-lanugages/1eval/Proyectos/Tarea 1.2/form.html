@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de envío de mi CV</title>
+</head>
+
+<body>
+    <h1>Rellena tu CV</h1>
+    <form action="nombreinventado-xd.php">
+        <div>
+            <label for="nombre">Nombre </label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Benito" maxlength="30" size="30" autofocus /> <br>
+            <label for="apellidos">Apellidos </label><br>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Camela" maxlength="80" size="80" /> <br>
+            <label for="contrasenya">Contraseña </label><br>
+            <input type="password" id="contrasenya" name="contrasenya" placeholder="Debajo de la cama tiene la mano Maria" size="31" maxlength="30" /> <br>
+            <label for="dni">DNI </label><br>
+            <input type="text" id="dni" name="dni" placeholder="00000000X" maxlength="9" /> <br>
+        </div>
+
+        <div>
+            <label for="sexo">Sexo </label><br>
+            <input type="radio" id="sexo" name="sexo" value="hombre" /> Hombre <br>
+            <input type="radio" id="sexo" name="sexo" value="mujer" /> Mujer <br>
+            <input type="radio" id="sexo" name="sexo" value="poco" /> Poco <br>
+            <input type="radio" id="sexo" name="sexo" value="renegado" /> Renegado del sexo <br>
+        </div>
+
+        <div>
+            <label for="foto">Inserte foto</label>
+            <input type="file" id="foto" name="foto" />
+        </div>
+        <div>
+            <input type="checkbox" id="suscripcion" name="suscripcion" value="1" />
+            <label for="suscripcion">Suscríbete al boletín (o muere un gatito).</label>
+        </div>
+        <div>
+            <input type="submit" id="enviar" name="enviar" value="Enviar" />
+            <input type="reset" id="cancel" name="cancel" value="Resetea, nan." />
+        </div>
+
+    </form>
+</body>
+
+</html>

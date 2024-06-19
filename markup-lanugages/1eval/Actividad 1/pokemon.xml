@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE Pokemon SYSTEM "pokemon.dtd">
+<pokemon>
+	<descripcion>
+		<pokedex>
+			Roselia
+		</pokedex>
+		<caracteristicas>
+			Su nombre proviene de rose (rosa) y lia (de azalía, una flor japonesa parecida a una rosa). Esto explicaría por qué tiene sus extremidades superiores con forma de rosa. También puede tratarse de un juego de palabras entre rose (rosa) y elia un nombre femenino.
+		</caracteristicas>
+	</descripcion>
+	<tipo elemental="planta" fortalezas="agua" debilidades="fuego">Roselia es un Pokémon de tipo planta, por lo que es fuerte frente al tipo agua y débil frente al tipo fuego.</tipo>
+	<habilidades hab1="cura-natural" hab2="punto-toxico" />
+</pokemon>

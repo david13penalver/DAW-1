@@ -1,0 +1,154 @@
+:root {
+    --primary-color: #3a3636;
+    --secondary-color: #f4f4f4;
+    --tertiary-color: #ff97dc;
+    --quartery-color: #ffcaf1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--quartery-color);
+    width: 100vw;
+    font-family: sans-serif;
+}
+
+header,
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+footer {
+    height: 10vh;
+    width: 100vw;
+    padding-top: 2vh;
+}
+
+footer i {
+    margin: 2vh 2vw;
+}
+
+nav ul {
+    text-decoration: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    line-height: 2;
+}
+
+a:hover {
+    color: var(--tertiary-color);
+}
+
+h3 {
+    text-align: center;
+}
+
+img {
+    box-shadow: 3px 3px 3px #000000;
+}
+
+main p {
+    text-align: justify;
+}
+
+article {
+    border: 3px solid #0000ff;
+    background-color: var(--tertiary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        margin: 0.25vh;
+    }
+
+    .mobile img {
+        max-width: 98vw;
+        height: auto;
+        margin: 0vw 1vw;
+    }
+
+    article {
+        margin: 1vw;
+        width: 98vw;
+    }
+
+    .article-contenido {
+        display: inline-block;
+        width: 66vw;
+        padding: 2vh 2vw;
+
+    }
+
+    article h2 {
+        text-align: center;
+    }
+
+    article img {
+        display: inline-block;
+        max-width: 30vw;
+        vertical-align: center;
+    }
+}
+
+@media screen and (min-width: 768.01px) and (max-width: 1024px) {
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: inline-block;
+        width: 32vw;
+        vertical-align: top;
+    }
+
+    .desktop div {
+        margin: 2.5vh;
+        background-color: #fc9de3;
+        padding: 2vh 2vw;
+        height: 25vh;
+    }
+
+    .desktop h3 {
+        text-align: left;
+        color: #ff00bb;
+    }
+
+    nav {
+        margin: 2.5vh;
+    }
+
+    nav li {
+        display: inline;
+        margin: 5vw;
+    }
+
+    section {
+        display: inline-block;
+        width: 63vw;
+    }
+
+    article {
+        padding: 2vh 2vw;
+    }
+
+    img {
+        display: block;
+        width: 50%;
+        margin: 4vh auto;
+    }
+}
