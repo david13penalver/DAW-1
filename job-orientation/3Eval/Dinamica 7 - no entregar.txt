@@ -1,0 +1,15 @@
+- Prostituta: reproducción
+- Abogado: leyes nuevo mundo
+- Sacerdote: no musulmán
+- Físico
+- Homosexual
+- Universitaria
+
+
+
+Abogado 3 SÍ
+Sacerdote 3 SÍ
+Físico 2 SÍ
+Drogata 2 SÍ
+Homosexual 2 SÍ
+Prostituta 2 SÍ

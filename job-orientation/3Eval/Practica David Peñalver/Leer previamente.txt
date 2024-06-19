@@ -1,0 +1,7 @@
+¡Hola, Amparo! La idea de cara a ver el trabajo sería en primer lugar la parte del DAFO+Itinerarios y, posteriormente, la del CV+Oferta.
+
+Todos los vídeos están enlazados a mi canal privado de YT en el que subo trabajos, por lo que están en oculto. Al clicar en el enlace deberían verse sin problemas. Si alguno no se te reprodujera, me lo dices y lo pongo público.
+
+He adjuntado también la presentación del DAFO+Itinerario por si quisieras verla, es básicamente la que te enseñé en clase.
+
+En el videocurrículum hay un QR y un enlace. El QR está programado para que funcione correctamente y lleve a la misma web del enlace. El enlace es un ejemplo de lo que sería un CV en versión web responsive para ver desde móviles, tablets, ordenadores... No es el CV del trabajo, es uno que hice previamente para practicar HTML y CSS. El CV del trabajo está en la carpeta en formato PDF y hecho con Europass.

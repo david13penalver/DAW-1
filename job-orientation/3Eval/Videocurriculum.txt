@@ -1,0 +1,75 @@
+VIDEOCURRICULUM
+
+1:30-2' de duración
+
+# Introducción
+## Saludo e identificación
+## Propósito del videocurriculum
+
+# Perfil personal
+## Experiencia y educación
+## Áreas de especialización
+
+# Habilidades y competencias
+## Habilidades técnicas
+## Habilidades blandas
+
+# Logros y proyectos destacados
+## Logros clave
+## Proyectos relevantes
+
+# Personalidad y motivación
+## Estilo y actitud
+## Intereses personales
+
+# Cierre y llamado a la acción
+## Cierre positivo
+## Llamado a la acción
+
+Subtítulos en inglés pueden ser un más
+
+GUION
+
+¡Hola! Mi nombre es David y soy desarrollador web especializado en el back-end. Estoy muy emocionado de compartir con ustedes mi experiencia y habilidades en el desarrollo de aplicaciones web.
+
+He adquirido conocimientos sólidos en desarrollo web back-end a través de mis estudios y proyectos personales. Me he especializado en lenguajes o tecnologías como Java, HTML, CSS, bases de datos SQL o GIT entre otros, y he completado proyectos académicos y personales que demuestran mi habilidad para diseñar y desarrollar aplicaciones web robustas y eficientes.
+
+He preparado este videocurrículum para contarles un poco más sobre mí y por qué creo que sería una gran adición a su equipo. Espero que disfruten el video y, al final, me encantaría tener la oportunidad de hablar con ustedes para discutir cómo puedo aportar valor a su empresa.
+
+Sin más preámbulos, ¡comencemos!
+
+Soy un desarrollador web back-end con una sólida formación en desarrollo de aplicaciones web y bases de datos. Aunque no tengo experiencia laboral formal, mi pasión por la tecnología y el desarrollo web me ha llevado a adquirir experiencia práctica a través de proyectos académicos y personales.
+
+Durante mis estudios de Desarrollo de Aplicaciones Web, he aprendido y trabajado con tecnologías como Java, Spring, MySQL y MongoDB. He participado en proyectos de desarrollo donde he diseñado y construido aplicaciones web funcionales, implementando funcionalidades del lado del servidor y conectando con bases de datos.
+
+Mis habilidades incluyen:
+
+    Gestión y optimización de bases de datos.
+    Integración de sistemas y servicios web.
+    Resolución de problemas y depuración de código.
+    Trabajar mediante tecnologías ágiles como Scrum.
+
+Además, tengo experiencia trabajando en entornos colaborativos, utilizando herramientas como Git y plataformas de desarrollo como GitHub. Soy proactivo, autodidacta y siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades para ofrecer soluciones eficientes y de calidad.
+
+En cuanto a habilidades blandas, cuento con dotes de comunicación, trabajo en equipo, gestión del tiempo, empatía y adaptabilidad derivadas de mis formaciones y de mis años de experiencia como entrenador personal y divulgador científico.
+
+Espero que esta breve presentación te haya dado una idea de mi entusiasmo por el desarrollo web y mis habilidades para aportar valor a tu equipo. Como joven desarrollador, estoy deseando contribuir a tu empresa con mi conocimiento, pasión por la tecnología y deseo de aprender.
+
+Te invito a que revises mi currículum para obtener más información sobre mis habilidades y logros. Si estás interesado en conversar más sobre cómo puedo encajar en tu equipo, no dudes en contactarme para agendar una entrevista. Estoy emocionado por la oportunidad de discutir cómo puedo contribuir a tu empresa y aprender de tu equipo.
+
+Muchas gracias por tu tiempo y consideración. Quedo a la espera de tu respuesta y espero tener pronto la oportunidad de conocerte personalmente.
+
+GUION RESUMIDO
+
+¡Hola! Soy David y me especializo en desarrollo web back-end. Estoy aquí para contarles sobre mi experiencia y habilidades en el desarrollo de aplicaciones web y por qué creo que podría ser una interesante incorporación a su equipo. Sin más preámbulos, ¡comencemos!
+
+He adquirido sólidos conocimientos en desarrollo web back-end a través de estudios y proyectos personales. Durante mi formación como Técnico Superior en Desarrollo de Aplicaciones Web, trabajé con tecnologías como Java, Spring, MySQL y MongoDB. He participado en proyectos donde diseñé y construí aplicaciones web, implementando funcionalidades del lado del servidor y conectando con bases de datos.
+
+Mis habilidades incluyen gestión y optimización de bases de datos, integración de sistemas y servicios web, y resolución de problemas y depuración de código. Mi pasión por la tecnología me llevó a trabajar en proyectos propios y académicos, demostrando mi capacidad para diseñar aplicaciones robustas y eficientes.
+
+Además, tengo experiencia trabajando en entornos colaborativos utilizando Git y GitHub. Soy proactivo, autodidacta y disfruto aprender nuevas tecnologías. Asimismo, mi experiencia como entrenador personal y divulgador científico me ha ayudado a desarrollar habilidades blandas como la comunicación, el trabajo en equipo, la gestión del tiempo y la empatía.
+
+Espero que este videocurrículum les dé una idea de mi entusiasmo por el desarrollo web y de cómo puedo aportar a su empresa. Les invito a revisar mi currículum para obtener más información sobre mis habilidades. Si desean discutir cómo podría encajar en su equipo, no duden en contactarme para agendar una entrevista. Me encantaría contar con la oportunidad de hablar con ustedes y aprender más sobre su empresa.
+
+Gracias por su tiempo y consideración. Quedo a la espera de su respuesta y espero conocerlos pronto.
+
