@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de canciones</h1>
+    <ul>
+        <a th:each="music : ${musicList}" th:href="@{${'/songs/' + music.id}}">
+            <li th:text="|${music.id} - ${music.name} - ${music.author}|">Texto por defecto</li>
+        </a>
+    </ul>
+</body>
+</html>

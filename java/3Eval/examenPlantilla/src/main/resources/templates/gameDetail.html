@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 th:text="${game.title}">Game Title</h1>
+<p><strong>Director:</strong> <span th:text="${game.director.name}">Director Name</span></p>
+<p><strong>Year:</strong> <span th:text="${game.year}">Year</span></p>
+<h2>Characters</h2>
+<!--<ul>
+    <li th:each="actor : ${game.actorList}" th:text="${actor.name}">Actor Name</li>
+    <li th:each="actor : ${game.actorList}" th:text="${actor.role}">Actor Name</li>
+</ul>-->
+<br><br>
+</body>
+</html>

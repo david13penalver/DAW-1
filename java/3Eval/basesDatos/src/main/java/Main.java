@@ -1,0 +1,149 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        /*
+        String sql = """
+                    INSERT INTO movies (imdb_id, title, year, image, runtime, description, director_id) 
+                    VALUES (?, ?, ?, null, ?, null, ?)                    
+                """;
+        List<Object> params = List.of(
+                "tt0071524", "Primera plana", 1974, 105, "nm0000697"
+        );
+        System.out.println("Película insertada con id " + RawSQL.insert(sql, params));
+        */
+
+        // Listado de todas las películas
+        /*
+        try {
+            ResultSet resultSet = RawSQL.select("SELECT * FROM movies", null);
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("title"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar las películas");
+        }
+
+         */
+
+        // Búsqueda de película por id
+        /*
+        try {
+            int id = 225;
+            ResultSet resultSet = RawSQL.select("SELECT * FROM movies WHERE id = ?", List.of(id));
+            if (resultSet.next()) {
+                System.out.println(resultSet.getString("title"));
+            } else {
+                System.out.println("No se ha encontrado la película");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar la película");
+        }
+
+         */
+
+
+        // Inserción de película
+        /*
+        String sql = """
+                INSERT INTO movies (imdb_id, title, year, image, runtime, description, director_id)
+                VALUES (?, ?, ?, null, ?, null, ?)
+            """;
+        List<Object> params = List.of(
+                "tt0071524", "Primera plana", 1974, 105, "nm0000697"
+        );
+        System.out.println("Película insertada con id " + RawSQL.insert(sql, params));
+
+         */
+
+        // Actualización de película
+        /*
+        String sql = """
+                UPDATE movies SET title = ? WHERE id = ?
+            """;
+        List<Object> params = List.of(
+                "Primera plana (1974)", 225
+        );
+        System.out.println("Filas actualizadas: " + RawSQL.update(sql, params));
+
+         */
+
+        // Borrado de película
+        /*String sql = """
+                DELETE FROM movies WHERE id = ?
+            """;
+        System.out.println("Filas borradas: " + RawSQL.delete(sql, List.of(225)));*/
+
+        // Listado de películas ordenado por año
+        /*try {
+            ResultSet resultSet = RawSQL.select("SELECT * FROM movies ORDER BY year DESC", null);
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("title") + " (" + resultSet.getInt("year") + ")");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar las películas");
+        }*/
+
+        // Buscar una película por id con el nombre del director
+        /*
+        try {
+            int id = 3;
+            ResultSet resultSet = RawSQL.select("""
+                SELECT m.title, d.name
+                FROM movies m
+                JOIN directors d ON m.director_id = d.imdb_id
+                WHERE m.id = ?
+            """, List.of(id));
+            if (resultSet.next()) {
+                System.out.println(resultSet.getString("title") + " (" + resultSet.getString("name") + ")");
+            } else {
+                System.out.println("No se ha encontrado la película");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar la película");
+        }
+
+         */
+
+        // Listado de películas por imdb_id del director
+        /*
+        try {
+            String directorImdbId = "nm0000697";
+            ResultSet resultSet = RawSQL.select("""
+                SELECT title
+                FROM movies
+                WHERE director_id = ?
+            """, List.of(directorImdbId));
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("title"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar las películas");
+        }
+
+         */
+
+        // Actores de una película por id
+        /*
+        try {
+            int movieId = 3;
+            ResultSet resultSet = RawSQL.select("""
+                SELECT a.name
+                FROM actors a
+                JOIN actors_movies am ON a.imdb_id = am.actor_id
+                JOIN movies m ON am.movie_id = m.imdb_id
+                WHERE m.id = ?
+            """, List.of(movieId));
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("name"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar los actores");
+        }
+
+         */
+
+    }
+}

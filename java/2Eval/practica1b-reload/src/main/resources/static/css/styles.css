@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+    color: #7df9ff; /* Este es un color azul eléctrico */
+}
+
+nav {
+    background-color: #7df9ff;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    background-color: #7df9ff;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+}
